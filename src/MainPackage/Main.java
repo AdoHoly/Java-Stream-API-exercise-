@@ -3,25 +3,14 @@ package MainPackage;
 import java.awt.*;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("First exercise");
-        System.out.println(IntStream.iterate(1, A -> A+1)
-                .limit(10000)
-                .filter(A -> A % 3 == 0 && A % 5 == 0 && A % 7 != 0)
-                .sum()
-        );
-        System.out.println();
-        System.out.println("Second Exercise");
-        IntStream.iterate(2, A-> A + 2)
-                .limit(100)
-                .filter(A -> A % 8 != 0)
-                .forEach(System.out::println);
-
         List<Book> list =new ArrayList<Book>();
         list.add(new Book("It Ends with Us", 43));
         list.add(new Book("Book1", 78));
@@ -39,7 +28,25 @@ public class Main {
         list.add(new Book("Madhouse", 41));
         list.add(new Book("How to learn java for dummies", 15));
 
+        System.out.println("First exercise");
+        System.out.println(IntStream.iterate(1, A -> A+1)
+                .limit(10000)
+                .filter(A -> A % 3 == 0 && A % 5 == 0 && A % 7 != 0)
+                .sum()
+        );
+        System.out.println();
+        System.out.println("Second Exercise");
+        IntStream.iterate(2, A-> A + 2)
+                .limit(100)
+                .filter(A -> A % 8 != 0)
+                .forEach(System.out::println);
 
+        System.out.println();
+        System.out.println("Exercise 3.1: ");
+        list.stream()
+                .filter(A -> A.getPrice() < 100)
+                .sorted(Comparator.comparing(b -> b.getName()))
+                .forEach(b -> System.out.println(b.getName()));
 
 
     }
