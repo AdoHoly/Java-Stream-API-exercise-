@@ -4,6 +4,7 @@ import java.awt.*;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.IntSummaryStatistics;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -54,6 +55,15 @@ public class Main {
                 list.stream()
                         .filter(A -> A.getName().length() < 5)
                         .count()
+        );
+
+        System.out.println();
+        System.out.println("Exercise 3.3: ");
+        System.out.println(
+                list.stream()
+                        .mapToDouble(Book::getPrice)
+                        .average()
+
         );
 
 
