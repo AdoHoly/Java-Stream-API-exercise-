@@ -66,6 +66,16 @@ public class Main {
 
         );
 
+        System.out.println();
+        System.out.println("Exercise 3.4: ");
+        System.out.println(
+                list.stream()
+                        .anyMatch(A -> A.getPrice() > 500)
+        );
+
+
+
+
 
     }
 }
