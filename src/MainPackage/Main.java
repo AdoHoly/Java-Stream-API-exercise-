@@ -48,6 +48,14 @@ public class Main {
                 .sorted(Comparator.comparing(b -> b.getName()))
                 .forEach(b -> System.out.println(b.getName()));
 
+        System.out.println();
+        System.out.println("Exercise 3.2: ");
+        System.out.println(
+                list.stream()
+                        .filter(A -> A.getName().length() < 5)
+                        .count()
+        );
+
 
     }
 }
