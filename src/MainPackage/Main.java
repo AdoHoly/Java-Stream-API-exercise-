@@ -1,5 +1,6 @@
 package MainPackage;
 
+import java.sql.SQLOutput;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -11,6 +12,15 @@ public class Main {
                 .filter(A -> A % 3 == 0 && A % 5 == 0 && A % 7 != 0)
                 .sum()
         );
+        System.out.println();
+        System.out.println("Second Exercise");
+        IntStream.iterate(2, A-> A + 2)
+                .limit(100)
+                .filter(A -> A % 8 != 0)
+                .forEach(System.out::println);
+
+
+
 
 
     }
